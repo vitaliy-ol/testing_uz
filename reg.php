@@ -1,3 +1,8 @@
+<?php
+include_once("php/db_conn.php");
+include_once("php/check_key.php");
+include_once("php/access.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,25 +37,32 @@
         <div class="center-block">
 
             <!--........Form........-->
-            <form action="" class="form">
+            <form method="post" action="php/add-user.php" class="form">
                 <fieldset class="general">
                     <legend class="general_legend">
                         Загальна інформація</legend>
 
 
-                    <label for="#surname">Прізвище <input type="text" class="surname" id="surname" autofocus required></label>
+                    <label for="#surname">
+                        Прізвище 
+                        <input type="text" class="surname" name="surname" autofocus required>
+                    </label>
 
 
-                    <label for="#name">Ім'я
-                    <input type="text" class="name" id="name" required></label>
+                    <label for="#name">
+                        Ім'я
+                        <input type="text" class="name" name="name" required>
+                    </label>
 
 
-                    <label for="#middle_name">По-батькові
-                    <input type="text" class="middle_name" id="middle_name" required></label>
+                    <label for="#middle_name">
+                        По-батькові
+                        <input type="text" class="middle_name" name="middle_name" required>
+                    </label>
 
 
                     <label for="#date">Дата народження
-                    <input type="text" class="date" id="date" pattern="\d{1,2}\.\d{1,2}\.\d{1,4}" placeholder="дд.мм.гггг" required></label>
+                    <input type="text" class="date" name="data_born" pattern="\d{1,2}\.\d{1,2}\.\d{1,4}" placeholder="дд.мм.гггг" required></label>
 
                 </fieldset>
 
@@ -59,29 +71,29 @@
                     <label for="railways">Оберіть залізницю де ви працюєте
                     <select name="railways" id="railways" class="railways" required required>
                     <option value="">Зробіть вибір</option>
-                    <option value="lviv">Львівська залізниця </option>
-                    <option value="kiev">Південно-Західна залізниця</option>
-                    <option value="Kharkiv">Південна залізниця</option>
-                    <option value="Donetsk">Донецька залізниця</option>
-                    <option value="">Придніпровська залізниця</option>
-                    <option value="Odessa">Одеська залізниця</option>
+                    <option value="Львівська залізниця">Львівська залізниця </option>
+                    <option value="Південно-Західна залізниця">Південно-Західна залізниця</option>
+                    <option value="Південна залізниця">Південна залізниця</option>
+                    <option value="Донецька залізниця">Донецька залізниця</option>
+                    <option value="Придніпровська залізниця">Придніпровська залізниця</option>
+                    <option value="Одеська залізниця">Одеська залізниця</option>
         </select>
                 </label>
 
                     <label for="#distation">Дистанція
                     <select name="distation" id="distation" class="distation" required>
                     <option value="">Зробіть вибір</option>
-                    <option value="track">ШЧ </option>
-                    <option value="signaling">ПЧ</option>
+                    <option value="ШЧ">ШЧ </option>
+                    <option value="ПЧ">ПЧ</option>
            </select>
-                    <input type="text" class="distantion-full" id="distantion-full" required placeholder="Повна назва виробничого підрозділу">
+                    <input type="text" class="distantion-full" name="distantion_full" required placeholder="Повна назва виробничого підрозділу">
                     </label>
 
                     <label for="#position">Посада
                     <select name="position" id="distation" class="position">
                     <option value="">Зробіть вибір</option>
-                    <option value="mechanic">ШН </option>
-                    <option value="track_monter">Монтер колії</option>
+                    <option value="ШН">ШН </option>
+                    <option value="Монтер колії">Монтер колії</option>
                    </select>
                </label>
                 </fieldset>
@@ -108,7 +120,7 @@
                 <input type="checkbox" class="coordination" id="coordination" required>
                 <label for="coordination" class="checkbox">Погодження про обробку персональних данних, та ознайомлення з правилами проходження тесту</label>
 
-                <button class="send" type="submit"> Реєстрація</button>
+                <button name="add" class="send" type="submit"> Реєстрація</button>
 
                 <!--........Form........-->
             </form>

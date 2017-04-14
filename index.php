@@ -1,5 +1,8 @@
+<?php 
+    include_once("php/signIn.php");
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="utf-8">
@@ -32,10 +35,10 @@
         <form class="form-autorization" action="" method="post">
 
             <label for="login-field">Логін</label><br>
-            <input type="email" autocomplete="on" autofocus maxlength="30" required id="login-field"><br>
+            <input name="name" type="text" autocomplete="on" autofocus maxlength="30" required id="login-field"><br>
             <label for="password-field">Пароль</label><br>
-            <input type="password" maxlength="30" required id="password-field"><br>
-            <button type="submit" class="form-autorization__btn">
+            <input name="key" type="password" maxlength="30" required id="password-field"><br>
+            <button name="signIn" type="submit" class="form-autorization__btn">
 	  		Вхід 
 	  		</button>
 
