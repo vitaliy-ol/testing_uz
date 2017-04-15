@@ -36,7 +36,9 @@
 
             <!--........test........-->
             <div class="test">
-    <div class="testing__name"><p class="test-start">Тест проходить <span class="name-worker">Бондаренко Віталій Олександрович</span></p></div>
+                <div class="testing__name">
+                    <p class="test-start">Тест проходить <span class="name-worker">Бондаренко Віталій Олександрович</span></p>
+                </div>
                 <div class="choice_tests">
                     <label data-for="btn-1" data-section="1" class="active-btn">1</label>
                     <label data-for="btn-2" data-section="2">2</label>
@@ -71,11 +73,11 @@
 
                     <section class="question-2 question" data-label="btn-2">
                         <h3 class="question__title">питання №2</h3>
-                        
+
                         <h4 class="test__question">
                             Скільки буде 2+4?
                         </h4>
-                        
+
                         <img src="images/bg-autorization.jpg" alt="">
                         <label class="ansver">
                         sory <input type="radio"  name="variant-ansver-2">
@@ -129,23 +131,28 @@
 
             </div>
 
-            <!--........test........-->
-            
+            <!--........test-end........-->
+
             <!--........result-test........-->
             <div class="result">
-               <h2 class="result__title">Результати тесту</h2>
-               <div class="result__test">
-                <h3 class="result__name">Шановний <span class="name-worker">Бондаренко Віталій Олександрович</span></h3>
-                <p class="result__discription-test">В тесті переірки кваліфікації знань на посаду <span class="work">ШН</span> ви набрали:</p>
-                <div class="progress">
-                <progress value="50" max="100"> 
-                </progress>
-                <div class="progress-flag">
-                        23
+                <h2 class="result__title">Результати тесту</h2>
+                <div class="result__test">
+                    <h3 class="result__name">Шановний <span class="name-worker">Бондаренко Віталій Олександрович</span></h3>
+                    <p class="result__discription-test">В тесті перевірки кваліфікаційних знань на посаду <span class="work">ШН</span> ви набрали <span class="correct- ansver">24</span>/<span class="number-question">40</span>:</p>
+
+                    <!--progress-test-->
+                    <div class="progress-test">
+                        <div class="clip1">
+                            <div class="slice1"></div>
+                        </div>
+                        <div class="clip2">
+                            <div class="slice2"></div>
+                        </div>
+                        <div class="status"></div>
                     </div>
                 </div>
             </div>
-            </div>
+            <!--progress-test-end-->
         </div>
 
 
@@ -154,6 +161,7 @@
     <footer class="footer">
         <p class="inf">Розроблено в ознайомчих цілях</p>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/listing-test.js"></script>
 </body>
 
