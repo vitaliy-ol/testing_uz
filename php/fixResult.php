@@ -50,8 +50,6 @@ function userResult($id_user, $title_test, $res, $db) {
     $result_col = $db->query($sql_col);
     $data_col = $result_col->fetch(PDO::FETCH_ASSOC);
     
-    $res = $res*100/$data_col['count'];
-    
     $sql = "UPDATE user_test SET test_id = :test_id, result_test = :result_test WHERE id = '$id_user'";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':test_id', $test_id);

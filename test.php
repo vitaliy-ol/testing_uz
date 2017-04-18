@@ -122,8 +122,10 @@ if($_SESSION['name'] && $_SESSION['position'] && $_SESSION['id_user']) {
              <div class="result">
                 <h2 class="result__title">Результати тесту</h2>
                 <div class="result__test">
-                    <h3 class="result__name">Шановний <span class="name-worker">Бондаренко Віталій Олександрович</span></h3>
-                    <p class="result__discription-test">В тесті перевірки кваліфікаційних знань на посаду <span class="work">ШН</span> ви набрали <span class="correct- ansver">24</span>/<span class="number-question">40</span>:</p>
+                    <h3 class="result__name">Шановний 
+                    <span class="name-worker"><?php echo $_SESSION['name']; ?></span></h3>
+                    <p class="result__discription-test">В тесті перевірки кваліфікаційних знань на посаду <span class="work"><?php echo $_SESSION['position']; ?></span> ви набрали 
+                    <span data-col="<?php echo $data_btn['count_btn']; ?>" class="correct-ansver">24</span>/<span class="number-question"><?php echo $data_btn['count_btn']; ?></span>:</p>
 
                     <!--progress-test-->
                     <div class="progress-test">
@@ -143,8 +145,10 @@ if($_SESSION['name'] && $_SESSION['position'] && $_SESSION['id_user']) {
     <footer class="footer">
         <p class="inf">Розроблено в ознайомчих цілях</p>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/listing-test.js"></script>
     <script src="js/resultTest.js"></script>
+    <script src="js/circleRes.js"></script>
 </body>
 
 </html>

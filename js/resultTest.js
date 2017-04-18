@@ -2,6 +2,8 @@ var btn_finish_test = document.querySelector('.completion_test');
     btn_finish_test.addEventListener('click', fixedResult);
     
     function fixedResult() {
+//        здесь вызывай функцию которая управляет кнопкой
+//        можно так btn(this); btn-название функции, this-сама кнопка
         var request = new XMLHttpRequest(),
         flag = 'flag=getMeInfo';
         
@@ -39,7 +41,15 @@ var btn_finish_test = document.querySelector('.completion_test');
         
         request.onreadystatechange = function() {
             if(request.readyState == 4 && request.status == 200) {
-                console.log(request.responseText);
+                document.querySelector('.correct-ansver').innerHTML = request.responseText;
+                document.querySelector('.completion_test').style['display'] = 'none';
+                document.querySelector('.timer').style['display'] = 'none';
+                document.querySelector('.test').style['display'] = 'none';
+                document.querySelector('.result').style['display'] = 'block';
+//                circle
+                var pie1 = $('.progress-test'),
+                    res = Number($('.correct-ansver').text()) * 100 / Number($('.correct-ansver').attr('data-col'));
+                progressBarUpdate(Math.round(res), 100, pie1);
             }
         }
 
