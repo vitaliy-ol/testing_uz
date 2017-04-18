@@ -4,9 +4,9 @@ include_once("php/getMeOneData.php");
 include_once("php/check_key.php");
 include_once("php/access.php");
 
-echo $_SESSION['name'];
-echo $_SESSION['position'];
-echo $_SESSION['id_user'];
+//echo $_SESSION['name'];
+//echo $_SESSION['position'];
+//echo $_SESSION['id_user'];
 if($_SESSION['name'] && $_SESSION['position'] && $_SESSION['id_user']) {
     include_once("php/delete-key.php");
 }else {
@@ -78,14 +78,14 @@ if($_SESSION['name'] && $_SESSION['position'] && $_SESSION['id_user']) {
                         $sql_quest = "SELECT id, text, img_url FROM quest_test WHERE test_id = '$test_id'";
                         $result_quest = $db->query($sql_quest);
                     
-                        $quest_i = 1;    
+                        $general_col = 1;    
                     
                         while($data_quest = $result_quest->fetch(PDO::FETCH_ASSOC)) {
                             $quest_id = $data_quest['id'];
                             
                             echo '
-                                <section class="question-'.$quest_i.' question" data-label="btn-'.$quest_i.'">
-                                    <h3 class="question__title">питання №'.$quest_i.'</h3>
+                                <section class="question-'.$general_col.' question" data-label="btn-'.$general_col.'">
+                                    <h3 class="question__title">питання №'.$general_col.'</h3>
                             ';
                             echo '
                                 <h4 class="test__question">
@@ -93,25 +93,22 @@ if($_SESSION['name'] && $_SESSION['position'] && $_SESSION['id_user']) {
                                 </h4>
                                 <img src="'.$data_quest['img_url'].'" alt="">
                             ';
-                            $quest_i++;
                             
-                            $sql_answer = "SELECT text FROM answer_test WHERE quest_id = '$quest_id'";
+                            $sql_answer = "SELECT id, text FROM answer_test WHERE quest_id = '$quest_id'";
                             $result_answer = $db->query($sql_answer);
-                            
-                            $answer_i = 1; 
                             
                             while($data_answer = $result_answer->fetch(PDO::FETCH_ASSOC)) {
                                 echo '
                                         <label class="ansver">
                                             '.$data_answer['text'].'
-                                            <input type="radio"  name="variant-ansver-'.$answer_i.'">
+                                            <input type="radio" data-questId='.$quest_id.' value='.$data_answer['id'].'  name="variant-ansver-'.$general_col.'">
                                             <div class="ansver_checked"></div>
                                         </label>
                                 ';
-                                $answer_i++;
                             }
                             
                             echo '</section>';
+                            $general_col++;
                         }
                     ?>
                 </div>
@@ -143,6 +140,7 @@ if($_SESSION['name'] && $_SESSION['position'] && $_SESSION['id_user']) {
         <p class="inf">Розроблено в ознайомчих цілях</p>
     </footer>
     <script src="js/listing-test.js"></script>
+    <script src="js/resultTest.js"></script>
 </body>
 
 </html>

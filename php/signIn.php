@@ -1,9 +1,10 @@
 <?
+session_start();
 if(isset($_POST['signIn'])) {
     include_once("db_conn.php");
     include_once("check_key.php");
     
-    session_start();
+    $_SESSION['login'] = $_POST['name'];
     
     if($_POST['name'] == 'admin') {
         $_SESSION['key'] = md5($_POST['key']);
@@ -20,4 +21,6 @@ if(isset($_POST['signIn'])) {
     }else {
         session_destroy();
     }
+}elseif(isset($_SESSION['login']) && isset($_SESSION['key'])) {
+    header("Location: reg.php");
 }
