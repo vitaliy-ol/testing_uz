@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Авторизація</title>
+
+    <link rel="icon" type="image/png" href="images/logo_uz.png">
+    <link rel="stylesheet" href="css/tests.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="center-block clearfix">
+            <img src="images/logo-larg.png" alt="" class="logo">
+            <h1 class="test_h">тест <span> Кваліфікація </span><span class="work">ШН</span></h1>
+            <div class="timer">30:00</div>
+            <button class="completion_test">Завершити тест
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="center-block">
+
+            <!--........test........-->
+            <div class="test">
+                <div class="testing__name">
+                    <p class="test-start">Тест проходить <span class="name-worker">Бондаренко Віталій Олександрович</span></p>
+                </div>
+                <div class="choice_tests">
+                    <label data-for="btn-1" data-section="1" class="active-btn">1</label>
+                    <label data-for="btn-2" data-section="2">2</label>
+                    <label data-for="btn-3" data-section="3">3</label>
+                </div>
+                <div class="test-shoved">
+                    <section class="question-1 question" data-label="btn-1">
+                        <h3 class="question__title">питання №1</h3>
+                        <h4 class="test__question">
+                            Скільки буде 2+2?
+                        </h4>
+                        <img src="" alt="">
+                        <label class="ansver">
+                        1
+                        <input type="radio"  name="variant-ansver-1">
+                        <div class="ansver_checked"></div></label>
+
+
+                        <label class="ansver">4<input type="radio"  name="variant-ansver-1">
+                        <div class="ansver_checked"></div></label>
+
+
+                        <label class="ansver">8<input type="radio"  name="variant-ansver-1">
+                        <div class="ansver_checked"></div>
+                        </label>
+
+
+                        <label class="ansver">0<input type="radio" id="ansver-4" name="variant-ansver-1">
+                        <div class="ansver_checked"></div></label>
+                    </section>
+
+                    <section class="question-2 question" data-label="btn-2">
+                        <h3 class="question__title">питання №2</h3>
+
+                        <h4 class="test__question">
+                            Скільки буде 2+4?
+                        </h4>
+
+                        <img src="images/bg-autorization.jpg" alt="">
+                        <label class="ansver">
+                        sory <input type="radio"  name="variant-ansver-2">
+                        <div class="ansver_checked"></div>
+                        </label>
+
+
+                        <label class="ansver">cvb
+                        <input type="radio"  name="variant-ansver-2">
+                        <div class="ansver_checked"></div></label>
+
+
+                        <label class="ansver">fd
+                        <input type="radio"  name="variant-ansver-2">
+                        <div class="ansver_checked"></div></label>
+
+
+                        <label class="ansver">qwe
+                        <input type="radio"  name="variant-ansver-2">
+                        <div class="ansver_checked"></div></label>
+                    </section>
+
+                    <section class="question-3 question" data-label="btn-3">
+                        <h3 class="question__title">питання №3</h3>
+                        <h4 class="test__question">
+                            Як вас звати?
+                        </h4>
+                        <img src="" alt="">
+                        <label class="ansver">
+                        Вася <input type="radio"  name="variant-ansver-3">
+                        <div class="ansver_checked"></div>
+                        </label>
+
+
+                        <label class="ansver">Влад
+                        <input type="radio"  name="variant-ansver-3">
+                        <div class="ansver_checked"></div></label>
+
+
+                        <label class="ansver">Аня
+                        <input type="radio"  name="variant-ansver-3">
+                        <div class="ansver_checked"></div></label>
+
+
+                        <label class="ansver">Петя
+                        <input type="radio"  name="variant-ansver-3">
+                        <div class="ansver_checked"></div></label>
+                    </section>
+                </div>
+
+
+            </div>
+
+            <!--........test-end........-->
+
+            <!--........result-test........-->
+            <div class="result">
+                <h2 class="result__title">Результати тесту</h2>
+                <div class="result__test">
+                    <h3 class="result__name">Шановний <span class="name-worker">Бондаренко Віталій Олександрович</span></h3>
+                    <p class="result__discription-test">В тесті перевірки кваліфікаційних знань на посаду <span class="work">ШН</span> ви набрали <span class="correct- ansver">24</span>/<span class="number-question">40</span>:</p>
+
+                    <!--progress-test-->
+                    <div class="progress-test">
+                        <div class="clip1">
+                            <div class="slice1"></div>
+                        </div>
+                        <div class="clip2">
+                            <div class="slice2"></div>
+                        </div>
+                        <div class="status"></div>
+                    </div>
+                </div>
+            </div>
+            <!--progress-test-end-->
+        </div>
+
+
+
+    </main>
+    <footer class="footer">
+        <p class="inf">Розроблено в ознайомчих цілях</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/listing-test.js"></script>
+</body>
+
+</html>

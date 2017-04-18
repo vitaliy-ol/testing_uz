@@ -50,6 +50,7 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     position: relative;
+    margin-bottom: 100px;
     .navigation {
         position: fixed;
         top: 65px;
@@ -57,6 +58,45 @@ body {
         width: 250px;
         height: 100%;
         background: #394A59;
+        &-btn {
+            display: none;
+            position: absolute;
+            right: -65px;
+            top: 50%;
+            transform: translateY(-50%) rotate(180deg);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 45, 85, 0.8);
+            transition: all 1s;
+            span {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 40px;
+                height: 5px;
+                background: #1a2732;
+                &:after {
+                    position: absolute;
+                    top: 50%;
+                    left: 10%;
+                    content: "";
+                    width: 25px;
+                    height: 25px;
+                    border: 5px solid #1a2732;
+                    border-left-color: transparent;
+                    border-top-color: transparent;
+                    transform: translatey(-50%) rotate(-45deg);
+                }
+            }
+            &:hover {
+                transform: translateY(-50%)rotate(0deg);
+                background: /*rgba(76, 217, 100, 0.5)*/
+                rgba(0, 122, 225, 0.8);
+            }
+        }
         ul {
             width: 100%;
             height: 100%;
@@ -120,11 +160,80 @@ body {
         padding: 30px 20px;
         border: 3px solid #D4B268;
         margin-bottom: 50px;
+        .select-test {
+            margin-bottom: 40px;
+            border-bottom: 3px solid grey;
+            label {
+                display: block;
+                margin-bottom: 20px;
+            }
+            select {
+                display: block;
+                width: 80%;
+                box-sizing: border-box;
+                border: 2px solid lightgrey;
+                border-radius: 2px;
+                padding: 7px 15px;
+                margin-bottom: 20px;
+                &:hover {
+                    border-color: #00a0df;
+                }
+                &:focus {
+                    border-color: #00a0df;
+                    background: rgba(13, 160, 223, 0.03);
+                }
+            }
+            .delete-test {
+                padding: 10px 15px;
+                margin-bottom: 20px;
+                color: #fff;
+                background: #ff2d55;
+                border: 2px solid #ff2d55;
+                &:hover {
+                    background: #fff;
+                    color: #ff2d55;
+                }
+            }
+        }
+        .question {
+            width: 80%;
+            margin: 40px auto;
+            border-bottom: 3px solid lightgrey;
+            h3 {
+                font-weight: 700;
+            }
+            img {
+                max-width: 100%;
+                margin: 20px auto;
+            }
+            p {
+                padding: 10px;
+                &.true-ansver {
+                    background: #4cd964;
+                }
+            }
+            .delete-question {
+                padding: 10px 10px;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                color: #fff;
+                background: #ff2d55;
+                border: 2px solid #ff2d55;
+                &:hover {
+                    background: #fff;
+                    color: #ff2d55;
+                }
+            }
+        }
     }
 }
 
 .footer {
-    transition: all 0.2s;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
     background: #E1E1E1;
     text-align: center;
     padding: 40px;

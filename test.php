@@ -75,7 +75,7 @@ if($_SESSION['name'] && $_SESSION['position'] && $_SESSION['id_user']) {
                 </div>
                 <div class="test-shoved">
                     <?php
-                        $sql_quest = "SELECT id, text, img_url FROM quest_test WHERE test_id = '$test_id'";
+                        $sql_quest = "SELECT id, text, img_url FROM quest_test WHERE test_id = '$test_id' ORDER BY RAND()";
                         $result_quest = $db->query($sql_quest);
                     
                         $general_col = 1;    

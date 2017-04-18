@@ -5,7 +5,8 @@ function rotate(element, degree) {
             '-ms-transform': 'rotate(' + degree + 'deg)',
             '-o-transform': 'rotate(' + degree + 'deg)',
             'transform': 'rotate(' + degree + 'deg)',
-            'zoom': 1
+            'zoom': 1,
+            'transition': 'rotate 3s' 
         });
     }
 
