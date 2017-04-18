@@ -93,8 +93,7 @@ body {
             }
             &:hover {
                 transform: translateY(-50%)rotate(0deg);
-                background: /*rgba(76, 217, 100, 0.5)*/
-                rgba(0, 122, 225, 0.8);
+                background: rgba(0, 122, 225, 0.8);
             }
         }
         ul {
@@ -142,68 +141,84 @@ body {
         padding: 30px 20px;
         border: 3px solid #D4B268;
         margin-bottom: 50px;
-        .select-test {
-            margin-bottom: 40px;
-            border-bottom: 3px solid grey;
-            label {
-                display: block;
-                margin-bottom: 20px;
-            }
-            select {
-                display: block;
-                width: 80%;
-                box-sizing: border-box;
-                border: 2px solid lightgrey;
-                border-radius: 2px;
-                padding: 7px 15px;
-                margin-bottom: 20px;
-                &:hover {
-                    border-color: #00a0df;
-                }
-                &:focus {
-                    border-color: #00a0df;
-                    background: rgba(13, 160, 223, 0.03);
-                }
-            }
-            .delete-test {
-                padding: 10px 15px;
-                margin-bottom: 20px;
-                color: #fff;
-                background: #ff2d55;
-                border: 2px solid #ff2d55;
-                &:hover {
-                    background: #fff;
-                    color: #ff2d55;
-                }
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .generate-btn {
+            padding: 10px 15px;
+            background-color: #007aff;
+            border: 2px solid #007aff;
+            color: #fff;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            &:hover {
+                background: #fff;
+                color: #007aff;
             }
         }
-        .question {
-            width: 80%;
-            margin: 40px auto;
-            border-bottom: 3px solid lightgrey;
-            h3 {
+        .generate-keys {
+            position: relative;
+            min-width: 300px;
+            min-height: 42px;
+            box-sizing: border-box;
+            font-weight: 700;
+            padding: 11.5px;
+            background: lightgrey;
+            border-radius: 2px;
+            &::after {
+                content: "Ключ:";
+                position: absolute;
+                top: 0%;
+                left: -80px;
+                height: 42px;
+                box-sizing: border-box;
                 font-weight: 700;
+                padding: 11.5px;
             }
-            img {
-                max-width: 100%;
-                margin: 20px auto;
-            }
-            p {
-                padding: 10px;
-                &.true-ansver {
-                    background: #4cd964;
+        }
+        .description {
+            margin-top: 40px;
+            width: 100%;
+            &-btn {
+                float: right;
+                cursor: pointer;
+                position: relative;
+                display: inline-block;
+                color: #007aff;
+                padding: 1px;
+                padding-right: 30px;
+                &::after {
+                    content: "?";
+                    position: absolute;
+                    top: 0%;
+                    right: 0%;
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    border-radius: 50%;
+                    border: 1.5px solid #007aff;
+                }
+                &:hover {
+                    color: #1a2732;
+                    text-decoration: underline;
+                    &::after {
+                        border-color: #1a2732;
+                    }
                 }
             }
-            .delete-question {
-                padding: 10px 10px;
-                margin-top: 10px;
-                margin-bottom: 20px;
-                color: #fff;
-                background: #ff2d55;
-                border: 2px solid #ff2d55;
-                &:hover {
-                    background: #fff;
-                    color: #ff2d55;
+            .information {
+                padding: 30px 0;
+                clear: both;
+                width: 90%;
+                margin: 0 auto;
+                p {
+                    margin-bottom: 25px;
+                }
+                span {
+                    color: #00a0df;
+                    font-weight: 700;
+                    margin-right: 10px;
                 }
             }
         }
@@ -212,7 +227,7 @@ body {
 
 .footer {
     position: absolute;
-    top: 100%;
+    top: 100vh;
     left: 0;
     width: 100%;
     box-sizing: border-box;
