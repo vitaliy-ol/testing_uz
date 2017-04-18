@@ -306,6 +306,7 @@ body {
     -webkit-transform: rotate(0);
     -o-transform: rotate(0);
     transform: rotate(0);
+    transition: all 3s;
 }
 
 .clip2 {
@@ -321,7 +322,6 @@ body {
     position: absolute;
     width: 160px;
     height: 160px;
-    /*<- вот здесь была ошибка*/
     clip: rect(0px, 160px, 160px, 80px);
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
@@ -332,6 +332,7 @@ body {
     -webkit-transform: rotate(0);
     -o-transform: rotate(0);
     transform: rotate(0);
+    transition: all 3s;
 }
 
 .status {
@@ -352,7 +353,11 @@ body {
 }
 
 .footer {
-    margin-top: 235px;
+    position: absolute;
+    top:100%;
+    left: 0;
+    width:100%;
+    box-sizing: border-box;
     transition: all 0.2s;
     background: #E1E1E1;
     text-align: center;

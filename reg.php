@@ -9,7 +9,7 @@ include_once("php/access.php");
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Авторизація</title>
+    <title>Реєстрація</title>
     <link rel="icon" type="image/png" href="images/logo_uz.png">
     <link rel="stylesheet" href="css/registration.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">

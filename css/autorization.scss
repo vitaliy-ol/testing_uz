@@ -35,6 +35,7 @@
          margin-top: 5%;
          -webkit-transition-duration: 1s;
          transition-duration: 1s;
+         width: 300px;
      }
      &:hover {
          background: none;
@@ -129,6 +130,13 @@
     .form-autorization{
         box-sizing: border-box;
         width:90%;
+    }
+    .logo{
+       width: 130px;
+        height:130px;
+        img{
+            width:216px;
+        }
     }
     
 }

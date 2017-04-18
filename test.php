@@ -19,7 +19,7 @@ if($_SESSION['name'] && $_SESSION['position'] && $_SESSION['id_user']) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Авторизація</title>
+    <title>Тест - <?php echo $_SESSION['position']; ?> </title>
 
     <link rel="icon" type="image/png" href="images/logo_uz.png">
     <link rel="stylesheet" href="css/tests.css" type="text/css">

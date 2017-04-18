@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Авторизація</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Додати тест</title>
     <link rel="icon" type="image/png" href="images/logo_uz.png">
     <link rel="stylesheet" href="css/admin-panel.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
@@ -31,7 +32,7 @@
 
         <nav class="navigation">
             <ul>
-                <li><a href="admin-panel.html" class="active">Додання тесту</a></li>
+                <li><a href="admin-panel.html" class="active">Створення тесту</a></li>
                 <li><a href="admin-panel-review.html">Перегляд тестів</a></li>
                 <li><a href="#">Перегляд  результатів</a></li>
                 <li><a href="#">Відкриття доступу</a></li>
@@ -39,8 +40,10 @@
         </nav>
         <article class="content">
             <form action="" class="add-test">
-                <label for="add-test__input">Запишіть сюди назву теста відповідаючу назві посади(абревіатуру):</label>
-                <input type="text" id="add-test__input">
+                <label for="add-test__input">Запишіть сюди назву теста відповідну назві посади(абревіатуру):</label>
+                <input type="text" id="add-test__input" required>
+                <label for="add-test__time" >Запишіть сюди час для проходження тестів у хвилинах:</label>
+                <input type="number" id="add-test__time" required>
                 <button type="submit">Створити тест</button>
             </form>
 
