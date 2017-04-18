@@ -1,6 +1,7 @@
 @import "reset";
 body {
     font-family: 'Lato', sans-serif;
+    font-size: 16px;
     width: 100%;
     height: 100%;
     color: #1a2732;
@@ -18,7 +19,7 @@ body {
     left: 0;
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 10;
     background-color: #1a2732;
     padding: 20px 0;
     box-shadow: 0 2px 45px 1px #1a2732;
@@ -37,7 +38,7 @@ body {
         font-weight: 300;
         color: #D4B268;
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 1.25em;
         text-align: center;
         span {
             color: #00a0df;
@@ -51,7 +52,7 @@ body {
         position: absolute;
         top: 50px;
         right: 0px;
-        font-size: 40px;
+        font-size: 2.5em;
         font-weight: 700;
     }
     .completion_test {
@@ -59,11 +60,11 @@ body {
         top: 50%;
         transform: translateY(-50%);
         right: 0;
-        padding: 8px 30px;
+        padding: 7px 15px;
         border: 3px solid #fff;
         background: #1A2732;
         outline: none;
-        font-size: 20px;
+        font-size: 1.25em;
         color: #fff;
         transition: background 0.5s;
         cursor: pointer;
@@ -72,7 +73,7 @@ body {
             box-shadow: 0px 0px 4px 3px #08854D;
             &::before {
                 content: "Ви впевнені?";
-                font-size: 14px;
+                font-size: 0.75em;
                 padding: 3px 5px;
                 line-height: 30px;
                 position: absolute;
@@ -195,7 +196,7 @@ body {
                 }
                 .test__question {
                     margin-bottom: 20px;
-                    font-size: 18px;
+                    font-size: 1.125em;
                     font-weight: 700;
                 }
                 .ansver {
@@ -204,7 +205,7 @@ body {
                     position: relative;
                     padding-left: 10px;
                     text-align: left;
-                    width: calc(100% - 60px);
+                    width: 100%;
                     margin-top: 40px;
                     vertical-align: middle;
                     line-height: 25px;
@@ -214,7 +215,7 @@ body {
                     }
                     .ansver_checked {
                         position: absolute;
-                        left: -40px;
+                        left: -30px;
                         top: 0;
                         width: 25px;
                         height: 25px;
@@ -351,8 +352,132 @@ body {
 }
 
 .footer {
+    margin-top: 235px;
     transition: all 0.2s;
     background: #E1E1E1;
     text-align: center;
     padding: 40px;
+}
+
+@media screen and (max-width:840px) {
+    body {
+        font-size: 14px;
+    }
+    %center-block {
+        max-width: 1280px;
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+    }
+    .header {
+        padding-bottom: 40px;
+        .logo {
+            width: 150px;
+            left: 50%;
+            transform: translate(-50%, 80.5%);
+        }
+        .registration_h {
+            float: none;
+            text-align: center;
+        }
+        .completion_test {
+            top: 80px;
+            left: 0;
+            transform: translate(0);
+            border-color: #1a2732;
+            &:hover {
+                border-color: #fff;
+                &::after {
+                    border-right-color: #1a2732;
+                }
+                &:before {
+                    background: #1a2732;
+                    color: #fff;
+                }
+            }
+        }
+        .timer {
+            color: #08854D;
+            top: 80px;
+        }
+    }
+    .main {
+        .test {
+            .choice_tests {
+                width: 100%;
+                margin-bottom: 40px;
+                label {
+                    width: 35px;
+                    &:nth-child(5n) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .test-shoved {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and ( max-width: 400px) {
+    .header {
+        .completion_test {
+            
+            top: 120px;
+            left: 50%;
+            width: 75%;
+            transform: translatex(-50%);
+            padding: 4px 10px;
+            &::after {
+                display: none;
+            }
+            &::before {
+                display: none;
+            }
+        }
+        .timer {
+            top: 75px;
+            right: 50%;
+            transform: translatex(50%);
+        }
+    }
+    .main {
+        margin-top: 220px;
+        .test {
+            .name-worker{
+                display: block;
+            }
+            .question__title {
+                width: 40%;
+                text-align: center;
+                padding: 0 2px;
+                left: 50%;
+                transform: translatex(-50%);
+            }
+            .test-shoved {
+                .question {
+                    width: 90%;
+                    .ansver {
+                        padding-left: 10px;
+                        text-align: left;
+                        width: calc(100% - 30px);
+                        margin-top: 40px;
+                        margin-left: 30px;
+                        margin-bottom: 40px;
+                    }
+                }
+            }
+        }
+        .result__title {
+            width: 40%;
+            text-align: center;
+            padding: 0 10px;
+            left: 50%;
+            transform: translatex(-50%);
+        }
+        .result__test{
+            width:90%;
+        }
+    }
 }
