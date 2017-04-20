@@ -58,45 +58,6 @@ body {
         width: 250px;
         height: 100%;
         background: #394A59;
-        &-btn {
-            display: none;
-            position: absolute;
-            right: -65px;
-            top: 50%;
-            transform: translateY(-50%) rotate(180deg);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: rgba(255, 45, 85, 0.8);
-            transition: all 1s;
-            span {
-                display: block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 40px;
-                height: 5px;
-                background: #1a2732;
-                &:after {
-                    position: absolute;
-                    top: 50%;
-                    left: 10%;
-                    content: "";
-                    width: 25px;
-                    height: 25px;
-                    border: 5px solid #1a2732;
-                    border-left-color: transparent;
-                    border-top-color: transparent;
-                    transform: translatey(-50%) rotate(-45deg);
-                }
-            }
-            &:hover {
-                transform: translateY(-50%)rotate(0deg);
-                background: /*rgba(76, 217, 100, 0.5)*/
-                rgba(0, 122, 225, 0.8);
-            }
-        }
         ul {
             width: 100%;
             height: 100%;
@@ -112,7 +73,6 @@ body {
                     &:hover {
                         background: #2E3B46;
                         color: #fff;
-                    }
                     }
                     &.active {
                         background: #2E3B46;
