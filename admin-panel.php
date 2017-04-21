@@ -1,6 +1,10 @@
+<?php
+include_once("php/db_conn.php");
+include_once("php/check_key.php");
+include_once("php/access.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,36 +44,43 @@
             </ul>
         </nav>
         <article class="content">
-            <form action="" class="add-test">
+            <form action="php/addTest.php" class="add-test" method="post">
                 <label for="add-test__input">Запишіть сюди назву теста відповідну назві посади(абревіатуру):</label>
-                <input type="text" id="add-test__input" required>
+                <input type="text" id="add-test__input" name="title" required>
                 <label for="add-test__time" >Запишіть сюди час для проходження тестів у хвилинах:</label>
-                <input type="number" id="add-test__time" required>
-                <button type="submit">Створити тест</button>
+                <input type="number" id="add-test__time" name="time" required>
+                <button name="addTest" type="submit">Створити тест</button>
             </form>
 
 
-            <form action="" class="add-question">
+            <form action="php/addTest.php" method="POST" class="add-question">
                 <label for="position">Оберіть тест до якого хочете додати запитання:</label>
-                <select type="text" id="position" name="position">
+                <select type="text" id="position" name="test_id">
                         <option value="">Зробіть вибір</option>
-                        <option value="Загальний тест">Загальний тест</option>
-                        <option value="ШН">ШН </option>
-                        <option value="Монтер колії">Монтер колії</option>
+                        <?php
+                            $sql_test = "SELECT id, title FROM test_s";
+                            $result_test = $db->query($sql_test);
+                            while($data_test = $result_test->fetch(PDO::FETCH_ASSOC)){
+                                echo '
+                                    <option value="'.$data_test['id'].'">'.$data_test['title'].'</option>
+                                ';
+                            }
+                        ?>
                     </select>
 
                 <label for="add-question__input">Запишіть сюди запитання тесту</label>
-                <textarea id="add-question__input" required rows="4"></textarea>
+                <textarea name="text" id="add-question__input" required rows="4"></textarea>
                 <div class="variant-qustion">
                     <label for="variant-qustion__label">Запишіть сюди варіанти відповіді(зеленим кольором позначено поле для вводу правильного варіанту)</label>
-                    <input type="text" id="variant-qustion__label" class="variant-qustion__true" required>
-                    <input type="text" id="variant-qustion__label" required>
-                    <input type="text" id="variant-qustion__label" required>
-                    <input type="text" id="variant-qustion__label" required>
+                    <input type="text" name="true_answer" class="variant-qustion__true" id="variant-qustion__label" required>
+                    <input type="text" name="text_a_2" required>
+                    <input type="text" name="text_a_3" required>
+                    <input type="text" name="text_a_4" required>
                 </div>
                 <label for="add_img">Додати зображення до запитання</label>
                 <input type="file">
-                <button type="submit">Додати запитання</button>
+                <input name="img_url" value="" type="hidden">
+                <button name="addAnswer" type="submit">Додати запитання</button>
                 <button type="reset">Скинути форму</button>
             </form>
         </article>
@@ -80,6 +91,8 @@
     <footer class="footer">
         <p class="inf">Розроблено в ознайомчих цілях</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/upload.js"></script>
 </body>
 
 </html>

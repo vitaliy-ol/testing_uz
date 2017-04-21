@@ -10,7 +10,7 @@ if(isset($_POST['signIn'])) {
         $_SESSION['key'] = md5($_POST['key']);
         $status_key = check_key($_SESSION['key'], $db);  
         if($status_key) {
-            header("Location: admin.php");
+            header("Location: admin-panel.php");
         }
     }elseif($_POST['name'] == 'user') {
             $status_key = check_key($_POST['key'], $db);
@@ -21,6 +21,8 @@ if(isset($_POST['signIn'])) {
     }else {
         session_destroy();
     }
-}elseif(isset($_SESSION['login']) && isset($_SESSION['key'])) {
+}elseif(isset($_SESSION['login']) && isset($_SESSION['key']) && $_SESSION['login'] == 'user') {
     header("Location: reg.php");
+}elseif(isset($_SESSION['login']) && isset($_SESSION['key']) && $_SESSION['login'] == 'admin') {
+    header("Location: admin-panel.php");
 }
