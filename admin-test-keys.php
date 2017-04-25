@@ -1,3 +1,8 @@
+<?php
+include_once("php/db_conn.php");
+include_once("php/check_key.php");
+include_once("php/access.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,15 +38,15 @@
         <nav class="navigation">
 
             <ul>
-                <li><a href="admin-panel.html">Створення тесту</a></li>
-                <li><a href="admin-review.html">Перегляд тестів</a></li>
-                <li><a href="admin-result.html">Перегляд  результатів</a></li>
-                <li><a href="admin-test-keys.html" class="active">Відкриття доступу</a></li>
+                <li><a href="admin-panel.php">Створення тесту</a></li>
+                <li><a href="admin-review.php">Перегляд тестів</a></li>
+                <li><a href="admin-result.php">Перегляд  результатів</a></li>
+                <li><a href="admin-test-keys.php" class="active">Відкриття доступу</a></li>
             </ul>
         </nav>
         <article class="content">
             <button type="button" class="generate-btn">Генерувати ключ</button>
-            <span class="generate-keys">dfgsdfgdfgssdfsdfsdfssdfg</span>
+            <span class="generate-keys"></span>
             <div class="description">
                 <a class="description-btn">Довідка</a>
                 <div class="information">
@@ -60,7 +65,24 @@
     <footer class="footer">
         <p class="inf">Розроблено в ознайомчих цілях</p>
     </footer>
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$('.generate-btn').click(function(){
+    $.ajax
+        ({
+            url: "../php/generateKey.php",
+            type: "post",
+            data: 
+                { 
+                    flag: "generate-key"
+                },
+            cache: false,
+            success: function(msg){
+                $('.generate-keys').text('').text(msg);
+            }
+        });
+});
+</script>
 </body>
 
 </html>

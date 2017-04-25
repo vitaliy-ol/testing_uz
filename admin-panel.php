@@ -8,7 +8,7 @@ include_once("php/access.php");
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     
+    
     <title>Додати тест</title>
     <link rel="icon" type="image/png" href="images/logo_uz.png">
     <link rel="stylesheet" href="css/admin-panel.css" type="text/css">
@@ -37,10 +37,10 @@ include_once("php/access.php");
         <nav class="navigation">
            
             <ul>
-                <li><a href="admin-panel.html" class="active">Створення тесту</a></li>
-                <li><a href="admin-review.html">Перегляд тестів</a></li>
-                <li><a href="admin-result.html">Перегляд  результатів</a></li>
-                <li><a href="admin-test-keys.html">Відкриття доступу</a></li>
+                <li><a href="admin-panel.php" class="active">Створення тесту</a></li>
+                <li><a href="admin-review.php">Перегляд тестів</a></li>
+                <li><a href="admin-result.php">Перегляд  результатів</a></li>
+                <li><a href="admin-test-keys.php">Відкриття доступу</a></li>
             </ul>
         </nav>
         <article class="content">

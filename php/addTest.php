@@ -15,25 +15,26 @@ if(isset($_POST['addTest'])){
     insertData($dataArray, $table, $dataArrayColumn, $db);
     
     $idQuest = $db->lastInsertId();
-    $idTrueAnswer = getTrueAnswer($idQuest, $_POST['true_answer'], $db);
+    $idTrueAnswer = getTrueAnswer($idQuest, $_POST['test_id'], $_POST['true_answer'], $db);
     
     updateQuest($idQuest, $idTrueAnswer, $db);
     
     $table = 'answer_test';
     for($i = 2; $i <= 4; $i++){
         $postKey = 'text_a_'.$i;
-        $dataArray = array($idQuest, $_POST[$postKey]);
-        $dataArrayColumn = array('quest_id', 'text');
+        $dataArray = array($idQuest, $_POST['test_id'], $_POST[$postKey]);
+        $dataArrayColumn = array('quest_id', 'test_id', 'text');
         insertData($dataArray, $table, $dataArrayColumn, $db);   
     }
     
     header('Location: ../admin-panel.php');
 }
 
-function getTrueAnswer($idQuest, $text, $db) {
-    $sql = "INSERT INTO answer_test (quest_id, text) VALUES (:quest_id, :text)";
+function getTrueAnswer($idQuest, $test_id, $text, $db) {
+    $sql = "INSERT INTO answer_test (quest_id, test_id, text) VALUES (:quest_id, :test_id, :text)";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':quest_id', $idQuest);
+    $stmt->bindValue(':test_id', $test_id);
     $stmt->bindValue(':text', $text);
     $stmt->execute();
     return $db->lastInsertId();

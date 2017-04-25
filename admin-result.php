@@ -1,3 +1,8 @@
+<?php
+include_once("php/db_conn.php");
+include_once("php/check_key.php");
+include_once("php/access.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,10 +38,10 @@
         <nav class="navigation">
 
             <ul>
-                <li><a href="admin-panel.html">Створення тесту</a></li>
-                <li><a href="admin-review.html">Перегляд тестів</a></li>
-                <li><a href="admin-result.html" class="active">Перегляд  результатів</a></li>
-                <li><a href="admin-test-keys.html">Відкриття доступу</a></li>
+                <li><a href="admin-panel.php">Створення тесту</a></li>
+                <li><a href="admin-review.php">Перегляд тестів</a></li>
+                <li><a href="admin-result.php" class="active">Перегляд  результатів</a></li>
+                <li><a href="admin-test-keys.php">Відкриття доступу</a></li>
             </ul>
         </nav>
         <article class="content">
@@ -64,27 +69,31 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                            $sql = "SELECT * FROM user_test ORDER BY id DESC";
+                            $result = $db->query($sql);
+                            while($data = $result->fetch(PDO::FETCH_ASSOC)){
+                                $test_id = $data['test_id'];
+                                $sql_count = "SELECT COUNT(id) as count FROM quest_test WHERE test_id='$test_id'";
+                                $result_count = $db->query($sql_count);
+                                $data_count = $result_count->fetch(PDO::FETCH_ASSOC);
+                                $resultTestProcent = $data['result_test']*100/$data_count['count'];
+                                
+                                echo '
+                                <tr>
+                                    <td>'.$data['full_name'].'</td>
+                                    <td>'.$data['data_born'].'</td>
+                                    <td>'.$data['railways'].'</td>
+                                    <td>'.$data['distation'].'</td>
+                                    <td>'.$data['distantion_full'].'</td>
+                                    <td>'.$data['position'].'</td>
+                                    <td>'.$data['date_fix'].'</td>
+                                    <td>'.$resultTestProcent.'%</td>
+                                </tr>
+                                ';
+                            }
+                        ?>
                         <tr>
-                            <td>Подольський Владислав Денисовичіваівавіа</td>
-                            <td>05.05.95</td>
-                            <td>Південно-Західна залізниця</td>
-                            <td>ШЧ</td>
-                            <td>ЦІС</td>
-                            <td>ШН</td>
-                            <td>2017-04-18 20:00:05</td>
-                            <td>90%</td>
-                        </tr>
-                        <tr>
-                            <td>Бондаренко Бондаренко Олександрович</td>
-                            <td>24.08.94</td>
-                            <td>Придніпровська залізниця</td>
-                            <td>ШЧ</td>
-                            <td>ЦІС</td>
-                            <td>ШН</td>
-                            <td>2017-04-18 20:00:05</td>
-                            <td>90%</td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
